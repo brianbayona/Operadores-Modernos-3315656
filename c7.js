@@ -7,3 +7,10 @@ const evaluar = (...valores) => { // Usamos rest parameters para aceptar un núm
     if (!todosSonNumeros) {
       throw new Error("La lista contiene valores no numéricos.");
     }
+    const listaProcesada = [...valores]; // Creamos una copia de la lista original para no modificarla  
+    const suma = listaProcesada.reduce((acc, curr) => acc + curr, 0); // Usamos reduce para sumar todos los elementos de la lista
+    const promedio = suma / listaProcesada.length;
+
+    return promedio;
+
+  } catch (error) {
