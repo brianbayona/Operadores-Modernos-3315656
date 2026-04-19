@@ -10,3 +10,8 @@ const configurarUsuario = (defaults, personalizadas) => {
 
   return idioma;
 };
+const preferenciasUsuario = { idioma: "en" };//
+const resultado = configurarUsuario(defaults, preferenciasUsuario);
+
+console.log(`Idioma final configurado: ${resultado}`); // Salida: "en"
+console.log("Original sin cambios:", defaults);       // Salida: { tema: "claro", idioma: "es" }
