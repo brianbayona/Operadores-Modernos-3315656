@@ -10,3 +10,4 @@ const inventarioActualizado = agregarInventario(inventario, "lente");// Agregamo
 
 console.log("Inventario original:", inventario);// El inventario original permanece sin cambios
 console.log("Nuevo inventario:", inventarioActualizado);// El nuevo inventario incluye el nuevo ítem
+// Este código demuestra cómo usar el operador spread para crear un nuevo arreglo que incluye los elementos de un arreglo existente más un nuevo elemento, sin modificar el arreglo original.
