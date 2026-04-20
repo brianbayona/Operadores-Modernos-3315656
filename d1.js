@@ -18,4 +18,16 @@ const crearEstudiante = (nombre, ...notas) => { // El operador rest se utiliza p
     // Cálculo del promedio del resto de notas
     const sumaResto = restoNotas.reduce((acc, curr) => acc + curr, 0);  // La función 'reduce' se utiliza para sumar todos los elementos del array 'restoNotas', comenzando con un valor inicial de 0
     const promedioResto = restoNotas.length > 0 ? (sumaResto / restoNotas.length) : 0; // Cálculo del promedio: si hay notas adicionales, se calcula el promedio; de lo contrario, se asigna 0
-    
+    return Object.freeze({
+      nombre,
+      primeraNota,
+      promedioResto,
+      totalNotas: notas.length
+    });
+
+  } catch (error) {
+    // Manejo de errores
+    console.error(`Error en el registro: ${error.message}`);
+    return null; // Retornamos null si la validación falla
+  }
+};
