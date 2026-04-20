@@ -13,4 +13,11 @@ const evaluar = (...valores) => { // Usamos rest parameters para aceptar un núm
 
     return promedio;
 
-  } catch (error) {
+  } catch (error) {console.error("Error en la evaluación:", error.message);
+    return null; // Retornamos null para indicar que la operación falló
+  }
+};
+
+// --- Ejemplos de uso ---
+console.log(evaluar(10, 20, 30));       // Resultado: 20
+console.log(evaluar(10, "hola", 30));   // Salida: Error en la evaluación: La lista contiene valores no numéricos.
