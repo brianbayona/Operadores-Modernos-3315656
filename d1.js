@@ -13,3 +13,9 @@ const crearEstudiante = (nombre, ...notas) => { // El operador rest se utiliza p
     if (!sonNumeros) {
       throw new Error("Todas las notas deben ser numéricas.");// Lanzar un error si alguna de las notas no es un número válido
     }
+    const [primeraNota, ...restoNotas] = notas;
+
+    // Cálculo del promedio del resto de notas
+    const sumaResto = restoNotas.reduce((acc, curr) => acc + curr, 0);  // La función 'reduce' se utiliza para sumar todos los elementos del array 'restoNotas', comenzando con un valor inicial de 0
+    const promedioResto = restoNotas.length > 0 ? (sumaResto / restoNotas.length) : 0; // Cálculo del promedio: si hay notas adicionales, se calcula el promedio; de lo contrario, se asigna 0
+    
