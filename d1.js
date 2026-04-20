@@ -31,3 +31,9 @@ const crearEstudiante = (nombre, ...notas) => { // El operador rest se utiliza p
     return null; // Retornamos null si la validación falla
   }
 };
+const estudiante1 = crearEstudiante("Juan", 4.5, 3.0, 5.0, 4.0);// Creación de un estudiante con nombre y varias notas
+console.log(estudiante1);
+// Salida: { nombre: 'Juan', primeraNota: 4.5, promedioResto: 4, totalNotas: 4 }
+
+const errorTest = crearEstudiante("Ana", 4.5, "A", 5.0);
+// Salida en consola: Error en el registro: Todas las notas deben ser numéricas.
