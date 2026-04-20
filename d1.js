@@ -8,3 +8,8 @@ const crearEstudiante = (nombre, ...notas) => { // El operador rest se utiliza p
     if (notas.length === 0) { // Validación de notas: debe haber al menos una nota
       throw new Error("Debes registrar al menos una nota."); // Lanzar un error si no se han proporcionado notas
     }
+    // Validación: verificar que todos los elementos en 'notas' sean números
+    const sonNumeros = notas.every(n => typeof n === 'number' && !isNaN(n)); // La función 'every' verifica que todos los elementos del array cumplan la condición de ser números válidos (no NaN)
+    if (!sonNumeros) {
+      throw new Error("Todas las notas deben ser numéricas.");// Lanzar un error si alguna de las notas no es un número válido
+    }
